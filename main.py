@@ -1,6 +1,7 @@
 import logging
 from fastapi import FastAPI
 from src.routes import router
+from fastapi.responses import RedirectResponse
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -26,6 +27,14 @@ async def health_check():
     """Health check endpoint"""
     return {"status": "healthy"}
 
+
+
+
+@app.get("/mata")
+async def redirect_mata_channel():
+    """Endpoint to redirect to the Mata channel."""
+    return RedirectResponse(url="https://whatsapp.com/channel/0029VbB2ccoIHph8k7yfT01H")
+
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8081)
