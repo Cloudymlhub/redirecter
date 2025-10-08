@@ -1,6 +1,5 @@
 import logging
 from fastapi import FastAPI
-from src.routes import router
 from fastapi.responses import RedirectResponse
 
 # Configure logging
