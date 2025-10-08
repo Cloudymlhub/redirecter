@@ -14,8 +14,6 @@ app = FastAPI(
 )
 
 # Include routers
-app.include_router(router)
-
 @app.get("/")
 async def root():
     """Root endpoint"""
